@@ -1,6 +1,8 @@
-public class firstprogram {
+package lesson1;
 
-    public static void main(String[] args) {
+public class FirstProgram {
+
+    public static void main(String[]args){
         System.out.println("Привет, мир!");
-    }
+        }
 }
