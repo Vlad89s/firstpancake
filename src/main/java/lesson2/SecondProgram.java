@@ -10,9 +10,7 @@ public class SecondProgram {
         long resultAnother = calculate(42, 845, 8788);
         System.out.println(resultAnother);
     }
-
     public static int calculate(int arg1, int arg2, int arg3) {
-
         int R = (arg1 + arg1) * arg2;
         int i = (R / arg3) - arg1;
         return i;
