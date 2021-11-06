@@ -15,7 +15,7 @@ public class SecondProgram2<sqrt> {
         }
         else if (D == 0) {
             double x = -b / (2 * a);
-            System.out.println("x= " +x);
+            System.out.println("x= " + x);
         }
         else {
             System.out.println("Данное уравнение не имеет действительных корней.");
