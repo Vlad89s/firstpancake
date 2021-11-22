@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class SixthProgram {
 
     public static void main(String[] args) {
+
         Scanner size = new Scanner(System.in);
         int n;
         do {
@@ -17,36 +18,44 @@ public class SixthProgram {
             n = size.nextInt();
         }
         while (n <= 0);
-        float[] arr = new float[n];
-        float sum = 0;
+        double[] arr = new double[n];
+        System.out.println(Arrays.toString(random(arr)));
+        System.out.println("--------------------------------------------------------");
+        minimum(arr);
+        maximum(arr);
+        average(arr);
+    }
+
+    public static double[] random(double[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (float) Math.random();
-            sum = sum + arr[i];
+            arr[i] = Math.random();
         }
-        float min = arr[0];
+        return arr;
+    }
+
+    public static void minimum(double[] arr) {
+        double min = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] < min) min = arr[i];
         }
+        System.out.println("\nминимальный элемент массива = " + min);
+    }
 
-        float max = arr[0];
+    public static void maximum(double[] arr) {
+        double max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) max = arr[i];
-            }
+        }
+        System.out.println("максимальный элемент массива = " + max);
+    }
 
-        float avg = 0;
+    public static void average(double[] arr) {
+        double sum = 0;
+        double avg;
         for (int i = 1; i < arr.length; i++) {
-                avg = avg + arr[i];
-            }
-            avg = avg / n;
-        System.out.println(Arrays.toString(arr) + "\n");
-        System.out.println("минимальный элемент массива = " + min + "\nмаксимальный элемент массива = " + max + "\nсреднее значение массива = " + avg);
-        System.out.println("--------------------------------------------------------");
-
-//        Arrays.sort(arr);
-//        System.out.println("min " + arr[0]);
-//        System.out.println("max " + arr[n - 1]);
-//        float gum = sum / n;
-//        System.out.println(sum);
-//        System.out.println(gum);
+            sum = sum + arr[i];
+        }
+        avg = sum / arr.length;
+        System.out.println("среднее значение массива = " + avg);
     }
 }
