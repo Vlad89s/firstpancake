@@ -20,7 +20,7 @@ public class SixthProgram {
         while (n <= 0);
         double[] arr = new double[n];
         System.out.println(Arrays.toString(random(arr)));
-        System.out.println("--------------------------------------------------------");
+        System.out.println("---------------------------------------");
         minimum(arr);
         maximum(arr);
         average(arr);
@@ -28,23 +28,23 @@ public class SixthProgram {
 
     public static double[] random(double[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = Math.random();
+            arr[i] = (int) (Math.random()*11);
         }
         return arr;
     }
 
     public static void minimum(double[] arr) {
         double min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) min = arr[i];
+        for (double v : arr) {
+            if (v < min) min = v;
         }
-        System.out.println("\nминимальный элемент массива = " + min);
+        System.out.println("минимальный элемент массива = " + min);
     }
 
     public static void maximum(double[] arr) {
         double max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) max = arr[i];
+        for (double v : arr) {
+            if (v > max) max = v;
         }
         System.out.println("максимальный элемент массива = " + max);
     }
@@ -52,10 +52,10 @@ public class SixthProgram {
     public static void average(double[] arr) {
         double sum = 0;
         double avg;
-        for (int i = 1; i < arr.length; i++) {
-            sum = sum + arr[i];
+        for (double v : arr) {
+            sum = sum + v;
         }
         avg = sum / arr.length;
-        System.out.println("среднее значение массива = " + avg);
+        System.out.printf("среднее значение массива = " + "%.3f",avg );
     }
 }
