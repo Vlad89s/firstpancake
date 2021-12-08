@@ -8,39 +8,35 @@ public class TemperatureConvertRunner {
 
         TemperatureConvert temperature = new TemperatureConvert();
 
-        while (true) {
+        do {
             System.out.println("Выберите пункт меню");
             System.out.println("1.Конвертация градусов Цельсия в градусы Фаренгейта");
             System.out.println("2.Конвертация градусов Фаренгейта в градусы Цельсия");
             Scanner choose = new Scanner(System.in);
             if (choose.hasNextInt()) {
-            int input = choose.nextInt();
+                int input = choose.nextInt();
                 switch (input) {
-                    case 1:
+                    case 1 -> {
                         System.out.println("Введите температуру по шкале Цельсия для конвертации по шкале Фаренгейта");
                         if (!choose.hasNextDouble()) {
                             System.out.println("Некорректное число");
-                        }
-                        else {
+                        } else {
                             double celcius = choose.nextDouble();
                             System.out.println(celcius + "C = " + temperature.toFarenheit(celcius) + "F");
                         }
-                        break;
-                    case 2:
+                    }
+                    case 2 -> {
                         System.out.println("Введите температуру по шкале Фаренгейта для конвертации по шкале Цельсия");
                         if (!choose.hasNextDouble()) {
                             System.out.println("Некорректное число");
-                        }
-                        else {
+                        } else {
                             double fareinheit = choose.nextDouble();
                             System.out.println(fareinheit + "F = " + temperature.toCelcius(fareinheit) + "C");
                         }
-                        break;
-                    default:
-                        System.out.println("Вы ввели неверное число");
+                    }
+                    default -> System.out.println("Вы ввели неверное число");
                 }
-            }
-            else System.out.println("Вы ввели неверное число");
-        }
+            } else System.out.println("Вы ввели неверное число");
+        } while (true);
     }
 }

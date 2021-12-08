@@ -4,7 +4,7 @@ public class TemperatureConvert implements Convertable {
 
     @Override
     public double toFarenheit(double celcius) {
-        return ((double) (9 / 5) * (celcius + 32.0));
+        return ((double) 9 / 5 * (celcius + 32.0));
     }
 
     @Override
